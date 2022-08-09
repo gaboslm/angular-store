@@ -32,7 +32,7 @@
     <button (click)="increase()">+</button>
   </section>
 
-  <section class="products">
+  <section class="products--grid">
     <div *ngFor="let product of products; index as i" [style]="'z-index: '+ (products.length - i)">
       <img [src]="'https://picsum.photos/id/'+(i * 5)+'/100/100'" alt="">
       <p class="name">{{ product.name }}</p>
