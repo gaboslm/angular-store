@@ -1,0 +1,14 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form?.valid, form?.reset)">
+  <div class="field">
+    <input type="text" placeholder="Name" required name="name" [class.error]="nameV.touched && nameV.invalid" #nameV="ngModel" [(ngModel)]="name">
+    <p class="error op-0" [ngClass]="{'op-1': nameV.touched && nameV.invalid}">{{ getError(nameV.errors, 'name') }}</p>
+  </div>
+  <div class="field">
+    <input type="email" placeholder="Email" required email name="email" [class.error]="emailV.touched && emailV.invalid" #emailV="ngModel" [(ngModel)]="email">
+    <p class="error op-0" [ngClass]="{'op-1': emailV.touched && emailV.invalid}">{{ getError(emailV.errors, 'email') }}</p>
+  </div>
+  <div class="buttons">
+    <button class="submit" [disabled]="form.invalid" type="submit">Log in</button>
+    <button class="cancel" (click)="resetForm(form?.reset)" type="button">Reset</button>
+  </div>
+</form>

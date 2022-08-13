@@ -3,13 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FirstErrorPipe } from './pipes/first-error.pipe';
 import { AppComponent } from './app.component';
-import { FirstErrorPipe } from './first-error.pipe';
+import { LoginComponent } from './login/login.component';
+import { FundamentosComponent } from './fundamentos/fundamentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FirstErrorPipe
+    FirstErrorPipe,
+    LoginComponent,
+    FundamentosComponent
   ],
   imports: [
     BrowserModule,

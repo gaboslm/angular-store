@@ -1,0 +1,47 @@
+<section class="content">
+  <section>
+    <div class="person-image">
+      <div *ngIf="loading; else elseBlock" >
+        <img [src]="person.image" alt="">
+      </div>
+      <ng-template #elseBlock>
+        <div class="spinner"></div>
+      </ng-template>
+    </div>
+    <app-login></app-login>
+  </section>
+  <!-- <h1>Hola soy {{ person.name }} y <br> tengo {{ person.age }} años</h1>
+  <div class="input-example">
+    <input type="text" required minlength="3" maxlength="10" #nameInput="ngModel" [(ngModel)]="person.name">
+    <p *ngIf="!nameInput.valid" class="invalid">{{ getError(nameInput.errors) }}</p>
+  </div> -->
+  <!-- <div class="input-example">
+    <input type="number" class="input-example" required min="3" max="10" #ageInput="ngModel" [(ngModel)]="person.age">
+  </div> -->
+  <!-- <div class="input-example">
+    <input type="text" [(ngModel)]="name" required #nameArray="ngModel" placeholder="Add new name">
+    <button (click)="addNewName(nameArray.valid)">+</button>
+  </div> -->
+
+  <!-- <section class="names">
+    <div *ngFor="let name of names; index as i">{{ name }} <span class="close" (click)="removeName(i)">X</span></div>
+  </section> -->
+
+  <!-- <section class="progress">
+    <button (click)="decrease()">-</button>
+    <progress [value]="person.percentage" max="100"></progress>
+    <button (click)="increase()">+</button>
+  </section> -->
+
+  <section class="products--grid">
+    <div *ngFor="let product of products; index as i" [style]="'z-index: '+ (products.length - i)">
+      <img [src]="'https://picsum.photos/id/'+(i * 5)+'/300/100'" alt="">
+      <p class="name">{{ product.name }}</p>
+      <!-- <span class="close" (click)="removeProduct(i)">X</span> -->
+      <div class="price">
+        <p>$ {{ product.price }}</p>
+        <button class="">Add to cart</button>
+      </div>
+    </div>
+  </section>
+</section>
