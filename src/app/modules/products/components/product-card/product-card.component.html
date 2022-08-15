@@ -1,0 +1,23 @@
+<div class="product-card">
+  <img [src]="Product.image" alt="">
+  <p class="name">{{ Product.name }}</p>
+  <div class="info">
+    <p>$ {{ Product.price }}</p>
+    <button *ngIf="!isAdmin" class="add" (click)="AddProductToCart(Product.id)" [disabled]="Product.id && !ProductsInCart.includes(Product.id) ? false : true">
+      <div *ngIf="Product.id && !ProductsInCart.includes(Product.id); else added">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+        <p>Add to cart</p>
+      </div>
+      <ng-template #added>
+        <div>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check"></mat-icon>
+          <p>Added</p>
+        </div>
+      </ng-template>
+    </button>
+    <button *ngIf="isAdmin" class="close" (click)="RemoveProduct(Product.id)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon>
+      <p>Remove</p>
+    </button>
+  </div>
+</div>

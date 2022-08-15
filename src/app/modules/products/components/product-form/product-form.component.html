@@ -1,0 +1,38 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="person-image" (click)="openFileChooser()">
+    <img *ngIf="Product.image; else file" [src]="Product.image" accept=".png">
+    <ng-template #file>
+      <div class="file-chooser" [class.error]="ImageTouched && Product.image == ''">
+        <p>Choose an image</p>
+      </div>
+    </ng-template>
+  </div>
+  <div class="field">
+    <input
+    [(ngModel)]="Product.name"
+    type="text"
+    name="name"
+    #nameV="ngModel"
+    placeholder="Name"
+    required
+    [class.error]="nameV.touched && nameV.invalid"
+    >
+    <p class="error op-0" [ngClass]="{'op-1': nameV.touched && nameV.invalid}">El nombre es requerido</p>
+  </div>
+  <div class="field">
+    <input
+    [(ngModel)]="Product.price"
+    type="number"
+    name="price"
+    #priceV="ngModel"
+    placeholder="Precio"
+    required
+    [class.error]="priceV.touched && priceV.invalid"
+    >
+    <p class="error op-0" [ngClass]="{'op-1': priceV.touched && priceV.invalid}">El precio es requerido</p>
+  </div>
+  <div class="buttons">
+    <button class="submit" [disabled]="!validImage || form.invalid" type="submit">Add new product</button>
+    <button class="clean" (click)="resetForm(form.resetForm)" type="button">Clean</button>
+  </div>
+</form>

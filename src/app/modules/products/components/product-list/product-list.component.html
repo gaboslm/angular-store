@@ -1,0 +1,11 @@
+<section class="products--grid">
+  <div *ngFor="let Product of ProductList; index as i" [style]="'z-index: '+ (ProductList.length - i)">
+    <app-product-card
+    [Product]="Product" [i]="i"
+    [RemoveProduct]="RemoveProduct"
+    [AddProductToCart]="AddProductToCart"
+    [ProductsInCart]="ProductsInCart"
+    [isAdmin]="isAdmin"
+    ></app-product-card>
+  </div>
+</section>

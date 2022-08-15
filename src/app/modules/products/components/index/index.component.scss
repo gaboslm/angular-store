@@ -1,0 +1,17 @@
+.auth{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.shopping-cart{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 1rem;
+  gap: .5rem;
+  mat-icon{
+    color: #7c4dff;
+  }
+}

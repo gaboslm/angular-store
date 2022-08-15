@@ -1,0 +1,19 @@
+<div class="auth">
+  <p>User</p>
+  <mat-slide-toggle [(ngModel)]="isAdmin" color="$indigo-palette"></mat-slide-toggle>
+  <p>Admin</p>
+</div>
+
+<app-product-form *ngIf="isAdmin" [AddProduct]="AddProduct.bind(this)"></app-product-form>
+<div class="shopping-cart">
+  <p>{{ ProductsInCart.length }}</p>
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
+</div>
+
+<app-product-list
+[ProductList]="ProductList"
+[RemoveProduct]="RemoveProduct.bind(this)"
+[AddProductToCart]="AddProductToCart.bind(this)"
+[ProductsInCart]="ProductsInCart"
+[isAdmin]="isAdmin"
+></app-product-list>
