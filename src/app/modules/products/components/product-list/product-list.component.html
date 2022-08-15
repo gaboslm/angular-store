@@ -1,7 +1,7 @@
 <section class="products--grid">
   <div *ngFor="let Product of ProductList; index as i" [style]="'z-index: '+ (ProductList.length - i)">
     <app-product-card
-    [Product]="Product" [i]="i"
+    [Product]="Product"
     [RemoveProduct]="RemoveProduct"
     [AddProductToCart]="AddProductToCart"
     [ProductsInCart]="ProductsInCart"

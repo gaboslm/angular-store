@@ -1,5 +1,5 @@
 <div class="product-card">
-  <img [src]="Product.image" alt="">
+  <img [src]="this.Product.image" (error)="ErrorImage()" alt="">
   <p class="name">{{ Product.name }}</p>
   <div class="info">
     <p>$ {{ Product.price }}</p>

@@ -10,7 +10,6 @@ export class ProductCardComponent implements OnInit {
 
   @Input() RemoveProduct: Function = () => {};
   @Input() AddProductToCart: Function = () => {};
-  @Input() i: number = 0;
   @Input() Product: Product = {id: '1', name: '', image: '' };
   @Input() isAdmin?: boolean;
   @Input() ProductsInCart: string[] = [];
@@ -20,5 +19,8 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ErrorImage(){
+    this.Product.image = './assets/images/default.png';
+  }
 
 }
