@@ -5,7 +5,8 @@
 </div>
 
 <app-product-form *ngIf="isAdmin" [AddProduct]="AddProduct.bind(this)"></app-product-form>
-<div class="shopping-cart">
+
+<div *ngIf="!isAdmin" class="shopping-cart">
   <p>{{ ProductsInCart.length }}</p>
   <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"></mat-icon>
 </div>
